@@ -15,7 +15,7 @@ axios.get(path + 'item/')
             <div style="background-image: url('${imgPath + article._id}')" alt="${article.name}">
             <h2>${article.name}</h2>
             <p>Prix : ${article.price}€</p>
-            <button>Acheter</button>
+            <button class="article-btn">Acheter</button>
             `;
             articlesContainer.appendChild(card);
         })

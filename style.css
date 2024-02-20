@@ -125,7 +125,7 @@ main {
     align-items: center;
     height: fit-content;
     width: 350px;
-    margin: 2vw 0;
+    margin: 2.5vw 0;
     padding: 2vw;
     background: rgba(120, 120, 120, 0.10);
     box-shadow: 0 8px 32px 0 rgba(46, 46, 46, 0.25);
@@ -133,6 +133,18 @@ main {
     -webkit-backdrop-filter: blur(16px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.article-card h2 {
+    font-size: 2.5vw;
+    font-weight: 600;
+    color: #000000d9;
+    margin: 1vw 0;
+}
+
+.article-card p {
+    margin-bottom: 1vw;
 }
 
 .article-card div {
@@ -143,6 +155,25 @@ main {
     height: 200px;
     width: 100%;
     border-radius: 10px;
+}
+
+.article-btn {
+    position: absolute;
+    cursor: pointer;
+    bottom: -20px;
+    background-color: #0059a7;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #0059a7 0.2em solid;
+    border-radius: 11px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.article-btn:hover {
+    background-color: #fff;
+    color: #0059a7;
 }
 
 /** Footer **/
