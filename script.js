@@ -11,15 +11,30 @@ axios.get(path + 'item/')
         response.data.forEach(article => {
             const card = document.createElement('div');
             card.classList.add('article-card');
+            card.setAttribute('id', article._id);
             card.innerHTML = `
-            <div style="background-image: url('${imgPath + article._id}')" alt="${article.name}">
+            <div style="background-image: url('${imgPath + article._id}')" alt="${article.name}"></div>
             <h2>${article.name}</h2>
             <p>Prix : ${article.price}€</p>
             <button class="article-btn">Acheter</button>
             `;
             articlesContainer.appendChild(card);
         })
+        setRedirection();
     })
     .catch(error => {
-        console.error('Erreur lors de la récupération des données:', error);
+        console.log(error);
+        articlesContainer.innerHTML = '<h4>Une erreur est survenue lors de la récupération des articles.</h4>';
     });
+
+// gestion redirection vers la page de l'article
+function setRedirection() {
+    var articles = document.getElementsByClassName('article-card');
+
+    for (let i = 0; i < articles.length; i++) {
+        articles[i].lastElementChild.addEventListener('click', () => {
+            console.log("test");
+            window.location.href = 'article.html?id=' + articles[i].id;
+        });
+    }
+}
