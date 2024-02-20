@@ -25,3 +25,11 @@ axios.get(path + `item/${id}`)
         DescriptionContainer.innerHTML = '<h4>Une erreur est survenue lors de la récupération des articles.</h4>';
     });
 
+// gestion ajout au panier
+function addToCart() {
+    if (localStorage.getItem(string(id))) {
+        localStorage.setItem(string(id), parseInt(localStorage.getItem(string(id))) + 1)
+    } else {
+        localStorage.setItem(string(id), 1)
+    }
+}

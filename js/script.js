@@ -33,7 +33,6 @@ function setRedirection() {
 
     for (let i = 0; i < articles.length; i++) {
         articles[i].lastElementChild.addEventListener('click', () => {
-            console.log("test");
             window.location.href = 'article.html?id=' + articles[i].id;
         });
     }
