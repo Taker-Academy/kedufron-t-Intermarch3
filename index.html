@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>KDF</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>KDF commerce</h1>
+            </div>
+            <div class="btns">
+                <a href="#">Menu</a>
+                <a href="#articles">Articles</a>
+                <a href="panier.html">Panier</a>
+            </div>
+        </nav>
+        <main>
+            <section class="presentation">
+                <h1>Bienvenue sur KDF commerce</h1>
+                <p>Le site de vente en ligne de KDF</p>
+            </section>
+            <section class="articles">
+                <h2>Articles: </h2>
+                <div id="container">
+                    <div class="article-card">
+                        <div style="background-image: url('https://image.darty.com/darty?type=image&source=/market/2023/02/02/13147352_3723_1.jpg&width=269&height=405&quality=95&effects=Pad(CC,FFFFFF)')" alt="article"></div>
+                        <h2>kangourou</h2>
+                        <p>Prix : 34€</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2021 KDF commerce</p>
+        </footer>
+    </body>
+    <script type="module" src="./script.js"></script>
+</html>
