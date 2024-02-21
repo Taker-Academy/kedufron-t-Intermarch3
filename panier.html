@@ -26,19 +26,19 @@
             </section>
             <section class="command-form">
                 <h2>Commander</h2>
-                <form>
+                <div class="form">
                     <input class="email" type="email" placeholder="jean.dupont@gmail.com"></input>
                     <input class="rue" type="text" placeholder="rue de la paix"></input>
                     <input class="ville" type="text" placeholder="Paris"></input>
                     <input class="nom" type="text" placeholder="Dupont"></input>
                     <input class="prenom" type="text" placeholder="Jean"></input>
-                    <button class="commandBtn">Commander</button>
-                </form>
+                    <button id="commandBtn" onclick="sendOrderFunc()">Commander</button>
+                </div>
             </section>
         </main>
         <footer>
             <p>&copy; 2024 KDF commerce</p>
         </footer>
     </body>
-    <script type="module" src="./js/panier.js"></script>
+    <script src="./js/panier.js"></script>
 </html>

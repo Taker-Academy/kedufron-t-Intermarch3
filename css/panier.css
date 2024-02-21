@@ -162,7 +162,7 @@ section.command-form {
     align-items: center;
 }
 
-section.command-form form {
+section.command-form .form {
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -177,7 +177,7 @@ section.command-form form {
     outline: none;
 }
 
-form input {
+.form input {
     width: 100%;
     height: 5vw;
     padding: 0 20px;
@@ -189,7 +189,7 @@ form input {
     margin: 1vw 0;
 }
 
-form button {
+.form button {
     width: 100%;
     height: 5vw;
     padding: 0 20px;

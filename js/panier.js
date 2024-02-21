@@ -71,11 +71,24 @@ function checkCart() {
 
 // envoyer la commande
 function sendOrderFunc() {
+    // recupérer les données du formulaire
+    const nom = document.getElementsByClassName('nom')[0].value;
+    const prenom = document.getElementsByClassName('prenom')[0].value;
+    const email = document.getElementsByClassName('email')[0].value;
+    const ville = document.getElementsByClassName('ville')[0].value;
+    const rue = document.getElementsByClassName('rue')[0].value;
+
+    // verifier si les champs sont remplis
+    if (nom == '' || prenom == '' || email == '' || ville == '' || rue == '') {
+        alert('Veuillez remplir tous les champs');
+        return;
+    }
+    // remplir les données de la commande
     let cart = JSON.parse(localStorage.getItem('cart'));
     let data = {
-        email: "test@gmail.com",
-        name: "lucas leclerc",
-        address: "rue de la paix",
+        email: email,
+        name: prenom + ' ' + nom,
+        address: rue + ', ' + ville,
         cart: []
     }
     // ajouter les articles du panier
@@ -85,7 +98,6 @@ function sendOrderFunc() {
             amount: cart[id]
         });
     }
-    console.log(data);
     axios.post(path + 'order/', data, {
         headers: {
             'Content-Type': 'application/json',
@@ -99,5 +111,3 @@ function sendOrderFunc() {
             console.log(error);
         });
 }
-
-document.getElementsByClassName('commandBtn')[0].addEventListener('click', sendOrderFunc());
