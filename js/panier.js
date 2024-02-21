@@ -105,9 +105,23 @@ function sendOrderFunc() {
         }
     })
         .then(function(response) {
+            addCommand(response.data);
             console.log(response.data);
+            localStorage.removeItem('cart');
+            document.getElementsByClassName('popup')[0].style.display = 'flex';
         })
         .catch(function(error) {
             console.log(error);
         });
+}
+
+function addCommand(data) {
+    let commands = localStorage.getItem('commands');
+    if (commands === null) {
+        commands = [];
+    } else {
+        commands = JSON.parse(commands);
+    }
+    commands.push(data);
+    localStorage.setItem('commands', JSON.stringify(commands));
 }
