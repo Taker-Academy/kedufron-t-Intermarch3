@@ -14,6 +14,11 @@ checkCart();
 
 // afficher les elements du panier
 Object.keys(cart).forEach((id) => {
+    if (cart[id] < 1) {
+        delete cart[id];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        return;
+    }
     axios.get(path + `item/${id}`)
         .then(function(response) {
             let elem = response.data.item;
