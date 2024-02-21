@@ -2,6 +2,7 @@
 let commands = JSON.parse(localStorage.getItem('commands'));
 let commandsContainer = document.getElementById('commands');
 
+checkComands();
 // afficher les elements du panier
 commands.forEach((command) => {
     let commandElem = document.createElement('div');
