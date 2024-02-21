@@ -22,6 +22,7 @@ axios.get(path + `item/${id}`)
         PriceContainer.innerText = response.data.item.price + '€'
         btnPrice.value = 'Price: ' + response.data.item.price + '€'
         imgContainer.style.backgroundImage = `url('${imgPath + id}')`
+        addToCart()
         btn.addEventListener('click', () => {
             addToCart();
         });
