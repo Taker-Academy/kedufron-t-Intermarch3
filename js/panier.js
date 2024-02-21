@@ -4,6 +4,10 @@ const imgPath = 'https://api.kedufront.juniortaker.com/item/picture/'
 
 let cart = JSON.parse(localStorage.getItem('cart'));
 let cartContainer = document.getElementById('articles');
+let form = document.getElementsByClassName('command-form')[0];
+
+// verifier si le panier est vide
+checkCart();
 
 // afficher les elements du panier
 Object.keys(cart).forEach((id) => {
@@ -48,4 +52,15 @@ function changeCart(id, value) {
         document.getElementById(id).remove();
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    checkCart();
+}
+
+// verifier si le panier est vide
+function checkCart() {
+    let cart = localStorage.getItem('cart');
+    if (cart === null || Object.keys(JSON.parse(cart)).length === 0) {
+        cartContainer.innerHTML = '<h2>Votre panier est vide</h2>';
+        cartContainer.style.justifyContent = 'start';
+        form.style.display = 'none';
+    }
 }
