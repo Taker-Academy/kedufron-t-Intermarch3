@@ -16,7 +16,7 @@ commands.forEach((command) => {
 
 // verifier si le panier est vide
 function checkComands() {
-    let commands = localStorage.getItem('cart');
+    let commands = localStorage.getItem('commands');
     if (commands === null || Object.keys(JSON.parse(commands)).length === 0) {
         commandsContainer.innerHTML = '<h2>Votre panier est vide</h2>';
     }
