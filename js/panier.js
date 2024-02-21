@@ -2,12 +2,15 @@
 const path = 'https://api.kedufront.juniortaker.com/'
 const imgPath = 'https://api.kedufront.juniortaker.com/item/picture/'
 
+// elements
 let cart = JSON.parse(localStorage.getItem('cart'));
 let cartContainer = document.getElementById('articles');
 let form = document.getElementsByClassName('command-form')[0];
 
-// verifier si le panier est vide
+
+// verifie si le panier est vide
 checkCart();
+
 
 // afficher les elements du panier
 Object.keys(cart).forEach((id) => {
@@ -28,6 +31,7 @@ Object.keys(cart).forEach((id) => {
             </div>
                 `;
             cartContainer.appendChild(article);
+            // ajouter les event listeners pour les boutons
             article.addEventListener('click', (e) => {
                 if (e.target.classList.contains('article-del')) {
                     changeCart(id, -1);
@@ -64,3 +68,36 @@ function checkCart() {
         form.style.display = 'none';
     }
 }
+
+// envoyer la commande
+function sendOrderFunc() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    let data = {
+        email: "test@gmail.com",
+        name: "lucas leclerc",
+        address: "rue de la paix",
+        cart: []
+    }
+    // ajouter les articles du panier
+    for (let id in cart) {
+        data.cart.push({
+            id: parseInt(id),
+            amount: cart[id]
+        });
+    }
+    console.log(data);
+    axios.post(path + 'order/', data, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Host': 'api.kedufront.juniortaker.com'
+        }
+    })
+        .then(function(response) {
+            console.log(response.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
+document.getElementsByClassName('commandBtn')[0].addEventListener('click', sendOrderFunc());
