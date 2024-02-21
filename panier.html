@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/panier.css">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>KDF - panier</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>KDF commerce</h1>
+            </div>
+            <div class="btns">
+                <a href="index.html">Menu</a>
+                <a href="index.html#articles">Articles</a>
+                <a href="panier.html">Panier</a>
+            </div>
+        </nav>
+        <main>
+            <h2>Panier: </h2>
+            <section id="articles" class="articles">
+            </section>
+            <section class="command-form">
+                <h2>Commander</h2>
+                <form>
+                    <input class="email" type="email" placeholder="jean.dupont@gmail.com"></input>
+                    <input class="rue" type="text" placeholder="rue de la paix"></input>
+                    <input class="adresse" type="text" placeholder="Paris"></input>
+                    <input class="nom" type="text" placeholder="Dupont"></input>
+                    <input class="prenom" type="text" placeholder="Jean"></input>
+                    <button class="commandBtn">Commander</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 KDF commerce</p>
+        </footer>
+    </body>
+    <script type="module" src="./js/panier.js"></script>
+</html>
