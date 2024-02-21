@@ -10,6 +10,13 @@
         <title>KDF - panier</title>
     </head>
     <body>
+        <div class="popup" style="display: none">
+            <div class="popup-content">
+                <h2>Commande envoyée</h2>
+                <p>La commande a bien été envoyée</p>
+                <button onclick="closePopup()">Fermer</button>
+            </div>
+        </div>
         <nav class="navbar">
             <div class="logo">
                 <h1>KDF commerce</h1>
@@ -33,13 +40,6 @@
                     <input class="nom" type="text" placeholder="Dupont"></input>
                     <input class="prenom" type="text" placeholder="Jean"></input>
                     <button id="commandBtn" onclick="sendOrderFunc()">Commander</button>
-                </div>
-            </section>
-            <section class="popup" style="display: none">
-                <div class="popup-content">
-                    <h2>Commande envoyée</h2>
-                    <p>La commande a bien été envoyée</p>
-                    <button href="commands.html">Fermer</button>
                 </div>
             </section>
         </main>

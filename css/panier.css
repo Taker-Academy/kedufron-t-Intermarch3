@@ -12,6 +12,7 @@
 
 body {
     height: fit-content;
+    position: relative;
     background: -webkit-linear-gradient(to right, #005aa7, #fffde4); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #0059a775, #fffde4);
     backdrop-filter: blur( 50px );
@@ -204,6 +205,10 @@ section.command-form .form {
     cursor: pointer;
 }
 
+button:hover {
+    box-shadow:  0 0 10px#0000006b;
+}
+
 /** Footer **/
 footer {
     height: 8vw;
@@ -223,4 +228,54 @@ footer p {
     color: #000000d9;
 }
 
-/** Animations **/
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #0000007b;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .popup-content {
+    width: 50%;
+    height: 300px;
+    background: #fffde4;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(46, 46, 46, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.popup .popup-content h2 {
+    font-size: 3vw;
+    font-weight: 600;
+    color: #000000d9;
+}
+
+.popup .popup-content p {
+    font-size: 2vw;
+    font-weight: 400;
+    color: #000000d9;
+}
+
+.popup .popup-content button {
+    width: 70%;
+    height: 5vw;
+    padding: 0 20px;
+    font-size: 2vw;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 1vw 0;
+    background: #002f5757;
+    color: #fffde4;
+    cursor: pointer;
+}

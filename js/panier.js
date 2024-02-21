@@ -125,3 +125,9 @@ function addCommand(data) {
     commands.push(data);
     localStorage.setItem('commands', JSON.stringify(commands));
 }
+
+// fermer le popup
+function closePopup() {
+    document.getElementsByClassName('popup')[0].style.display = 'none';
+    document.location.href = 'commands.html';
+}
