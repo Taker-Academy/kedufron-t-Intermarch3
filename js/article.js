@@ -22,7 +22,7 @@ axios.get(path + `item/${id}`)
         PriceContainer.innerText = response.data.item.price + '€'
         btnPrice.value = 'Price: ' + response.data.item.price + '€'
         imgContainer.style.backgroundImage = `url('${imgPath + id}')`
-        addToCart()
+        init()
         btn.addEventListener('click', () => {
             addToCart();
             changeBtnStyle();
@@ -48,6 +48,24 @@ function addToCart() {
         cart[strId] = 1;
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// init btn style and cart
+function init() {
+    let cart = localStorage.getItem('cart');
+    if (cart === null) {
+        cart = {};
+        cart[id] = 0;
+    } else {
+        cart = JSON.parse(cart);
+        if (cart[id] == null) {
+            cart[id] = 0;
+        }
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    if (cart[id] > 0) {
+        changeBtnStyle();
+    }
 }
 
 // change btn style
