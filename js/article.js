@@ -12,15 +12,16 @@ let btnPrice = document.getElementsByClassName('button')[0].attributes[0];
 let btn = document.getElementById('buy-btn');
 
 const id = window.location.search.substring(4);
+console.log(id)
 
-// Requete pour recuperer les articles
+// Requete pour recuperer les articles et initialiser le panier
 axios.get(path + `item/${id}`)
     .then(function(response) {
         nameContainer.innerText = response.data.item.name
         DescriptionContainer.innerText = response.data.item.description
         fromContainer.innerText = response.data.item.createdIn
         PriceContainer.innerText = response.data.item.price + '€'
-        btnPrice.value = 'Price: ' + response.data.item.price + '€'
+        btnPrice.value = 'Prix: ' + response.data.item.price + '€'
         imgContainer.style.backgroundImage = `url('${imgPath + id}')`
         init()
         btn.addEventListener('click', () => {
@@ -30,7 +31,7 @@ axios.get(path + `item/${id}`)
     })
     .catch(error => {
         console.log(error);
-        DescriptionContainer.innerHTML = '<h4>Une erreur est survenue lors de la récupération des articles.</h4>';
+        DescriptionContainer.innerHTML = '<h4>Une erreur est survenue lors de la récupération de l\'articles.</h4>';
     });
 
 // gestion ajout au panier
@@ -73,4 +74,5 @@ function changeBtnStyle() {
     btn.children[0].style.setProperty('--button-color', '#4CAF50');
     btn.children[0].style.setProperty('--tooltip-color', '#4CAF50');
     btn.children[0].children[0].children[0].innerText = 'Ajouté au panier';
+    btn.children[0].children[0].children[1].innerText = 'En acheté plus';
 }
