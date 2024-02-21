@@ -25,6 +25,7 @@ axios.get(path + `item/${id}`)
         addToCart()
         btn.addEventListener('click', () => {
             addToCart();
+            changeBtnStyle();
         });
     })
     .catch(error => {
@@ -47,4 +48,11 @@ function addToCart() {
         cart[strId] = 1;
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// change btn style
+function changeBtnStyle() {
+    btn.children[0].style.setProperty('--button-color', '#4CAF50');
+    btn.children[0].style.setProperty('--tooltip-color', '#4CAF50');
+    btn.children[0].children[0].children[0].innerText = 'Ajouté au panier';
 }
