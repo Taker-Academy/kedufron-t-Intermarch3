@@ -21,7 +21,7 @@ body {
 
 /** Navbar **/
 .navbar {
-    height: 8vw;
+    height: max(8vw, 80px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 2.5vw 0;
-    padding: 2vw;
+    padding: max(2vw, 15px);
     background: #5d87ac;
     box-shadow: 0 8px 32px 0 rgba(46, 46, 46, 0.25);
     backdrop-filter: blur(16px);
@@ -97,7 +97,7 @@ body {
 }
 
 .command-elem p {
-    font-size: 2vw;
+    font-size: max(2vw, 12px);
     font-weight: 400;
     color: #fffde4;
 }
@@ -113,7 +113,7 @@ main {
 }
 
 main h2 {
-    font-size: 3vw;
+    font-size: max(3vw, 20px);
     font-weight: 600;
     color: #000000d9;
     margin-bottom: 2vw;
@@ -121,7 +121,7 @@ main h2 {
 
 /** Footer **/
 footer {
-    height: 8vw;
+    height: max(8vw, 120px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -133,7 +133,21 @@ footer {
 }
 
 footer p {
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-weight: 400;
     color: #000000d9;
+}
+
+@media screen and (max-width: 950px) {
+    .navbar .btns {
+        width: 100%;
+    }
+
+    .navbar .btns a {
+        font-size: 4vw;
+    }
+
+    .navbar .logo {
+        display: none;
+    }
 }
