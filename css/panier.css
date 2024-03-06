@@ -21,7 +21,7 @@ body {
 
 /** Navbar **/
 .navbar {
-    height: 8vw;
+    height: max(8vw, 80px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@ main {
 }
 
 main h2 {
-    font-size: 3vw;
+    font-size: max(3vw, 22px);
     font-weight: 600;
     color: #000000d9;
     margin-bottom: 2vw;
@@ -106,14 +106,14 @@ section.articles {
 }
 
 .article h2 {
-    font-size: 2.5vw;
+    font-size: max(2.5vw, 20px);
     font-weight: 600;
     color: #000000d9;
-    margin: 1vw 0;
+    margin: max(1vw, 10px) 0;
 }
 
 .article p {
-    margin-bottom: 1vw;
+    margin-bottom: max(1vw, 15px);
 }
 
 .article div.img {
@@ -137,7 +137,7 @@ section.articles {
 .article .article-btns button {
     width: 35%;
     padding: 1vw 0;
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-weight: 600;
     border: none;
     border-radius: 5px;
@@ -148,7 +148,7 @@ section.articles {
 }
 
 .article .article-btns p {
-    font-size: 3vw;
+    font-size: max(3vw, 22px);
     font-weight: 600;
     color: #000000d9;
     margin: 0;
@@ -156,7 +156,8 @@ section.articles {
 
 section.command-form {
     width: 100%;
-    margin: 3vw;
+    margin-top: max(3vw, 50px);
+    margin-bottom: max(3vw, 25px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,21 +181,21 @@ section.command-form .form {
 
 .form input {
     width: 100%;
-    height: 5vw;
+    height: max(5vw, 50px);
     padding: 0 20px;
-    font-size: 2vw;
+    font-size: max(2vw, 15px);
     font-weight: 400;
     border: none;
     border-radius: 5px;
     outline: none;
-    margin: 1vw 0;
+    margin: max(1vw, 15px) 0;
 }
 
 .form button {
     width: 100%;
-    height: 5vw;
+    height: max(5vw, 50px);
     padding: 0 20px;
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-weight: 600;
     border: none;
     border-radius: 5px;
@@ -211,7 +212,7 @@ button:hover {
 
 /** Footer **/
 footer {
-    height: 8vw;
+    height: max(8vw, 120px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -223,7 +224,7 @@ footer {
 }
 
 footer p {
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-weight: 400;
     color: #000000d9;
 }
@@ -236,6 +237,7 @@ footer p {
     z-index: 100;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .popup .popup-content {
@@ -254,22 +256,23 @@ footer p {
 }
 
 .popup .popup-content h2 {
-    font-size: 3vw;
+    font-size: max(3vw, 25px);
     font-weight: 600;
     color: #000000d9;
 }
 
 .popup .popup-content p {
-    font-size: 2vw;
+    font-size: max(2vw, 18px);
+    text-align: center;
     font-weight: 400;
     color: #000000d9;
 }
 
 .popup .popup-content button {
     width: 70%;
-    height: 5vw;
+    height: max(5vw, 40px);
     padding: 0 20px;
-    font-size: 2vw;
+    font-size: max(2vw, 16px);
     font-weight: 600;
     border: none;
     border-radius: 5px;
@@ -278,4 +281,22 @@ footer p {
     background: #002f5757;
     color: #fffde4;
     cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+    .navbar .btns {
+        width: 100%;
+    }
+
+    .navbar .btns a {
+        font-size: 4vw;
+    }
+
+    .navbar .logo {
+        display: none;
+    }
+
+    .popup .popup-content {
+        width: 80%!important;
+    }
 }
