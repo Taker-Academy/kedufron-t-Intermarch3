@@ -79,7 +79,7 @@ main h2 {
     margin-bottom: 2vw;
 }
 
-section.articles {
+.articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
