@@ -20,7 +20,7 @@ body {
 
 /** Navbar **/
 .navbar {
-    height: 8vw;
+    height: max(8vw, 80px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -81,14 +81,16 @@ main {
 }
 
 .presentation h1 {
-    font-size: 5vw;
+    font-size: max(5vw, 35px);
+    text-align: center;
     font-weight: 600;
     color: #000000d9;
     margin: 2.5vw 0;
 }
 
 .presentation p {
-    font-size: 2.5vw;
+    text-align: center;
+    font-size: max(2.5vw, 20px);
     font-weight: 400;
     color: #000000d9;
     margin: 2.5vw 0;
@@ -104,7 +106,7 @@ main {
 }
 
 .articles h2 {
-    font-size: 3vw;
+    font-size: max(3vw, 20px);
     font-weight: 600;
     color: #000000d9;
     margin: 2vw 0;
@@ -125,7 +127,7 @@ main {
     align-items: center;
     height: fit-content;
     width: 350px;
-    margin: 2.5vw 0;
+    margin: max(2.5vw, 25px) 15px;
     padding: 2vw;
     background: rgba(120, 120, 120, 0.10);
     box-shadow: 0 8px 32px 0 rgba(46, 46, 46, 0.25);
@@ -137,14 +139,14 @@ main {
 }
 
 .article-card h2 {
-    font-size: 2.5vw;
+    font-size: max(2.5vw, 25px);
     font-weight: 600;
     color: #000000d9;
-    margin: 1vw 0;
+    margin: max(1vw, 10px) 0;
 }
 
 .article-card p {
-    margin-bottom: 1vw;
+    margin-bottom: max(1vw, 20px);
 }
 
 .article-card div {
@@ -178,7 +180,7 @@ main {
 
 /** Footer **/
 footer {
-    height: 8vw;
+    height: max(8vw, 120px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -190,9 +192,21 @@ footer {
 }
 
 footer p {
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-weight: 400;
     color: #000000d9;
 }
 
-/** Animations **/
+@media screen and (max-width: 950px) {
+    .navbar .btns {
+        width: 100%;
+    }
+
+    .navbar .btns a {
+        font-size: 4vw;
+    }
+
+    .navbar .logo {
+        display: none;
+    }
+}
