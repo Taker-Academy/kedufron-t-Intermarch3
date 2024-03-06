@@ -20,7 +20,7 @@ body {
 
 /** Navbar **/
 .navbar {
-    height: 8vw;
+    height: max(8vw, 80px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -68,7 +68,7 @@ main {
     height: fit-content;
     min-height: calc(100vh - 16vw);
     width: 100vw;
-    padding: 6vw 10%;
+    padding: 2vw 10%;
 }
 
 .article {
@@ -79,9 +79,15 @@ main {
     padding: 20px 0;
 }
 
+.article h2 {
+    font-size: max(3vw, 20px);
+    font-weight: 600;
+    color: #000000d9;
+}
+
 .article .img {
-    margin: 5vw 0;
-    height: 40vw;
+    margin: 2vw 0;
+    height: max(30vw, 160px);
     width: 100%;
     background: #ffffff;
     border-radius: 20px;
@@ -92,14 +98,14 @@ main {
 }
 
 .article h3 {
-    font-size: 3vw;
+    font-size: max(3vw, 20px);
     font-weight: 600;
     color: #000000d9;
     margin-top: 2.5vw;
 }
 
 .article p {
-    font-size: 2vw;
+    font-size: max(2vw, 16px);
     font-weight: 400;
     color: #000000d9;
     margin: 0.5vw 0;
@@ -111,7 +117,7 @@ main {
 }
 
 .btn {
-    margin-top: 5vw;
+    margin-top: 4vw;
     height: fit-content;
     width: 100%;
     display: flex;
@@ -122,10 +128,10 @@ main {
 /** buy btn **/
 
 .button {
-    --width: 250px;
-    --height: 50px;
-    --tooltip-height: 35px;
-    --tooltip-width: 90px;
+    --width: max(25vw, 200px);
+    --height: max(5vw, 40px);
+    --tooltip-height: max(3.5vw, 28px);
+    --tooltip-width: max(9vw, 72px);
     --gap-between-tooltip-to-button: 18px;
     --button-color: #5e88ac;
     --tooltip-color: #5e88ac;
@@ -136,6 +142,7 @@ main {
     text-align: center;
     border-radius: 0.45em;
     font-family: "Arial";
+    font-size: max(1.8vw, 14px);
     transition: background 0.3s;
     cursor: pointer;
 }
@@ -169,6 +176,7 @@ main {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
+    font-size: max(1.6vw, 12px);
 }
 
 .text {
@@ -203,8 +211,8 @@ main {
 }
 
 .icon svg {
-    width: 24px;
-    height: 24px;
+    width: 2.4vw;
+    height: 2.4vw;
 }
 
 .button:hover {
@@ -235,7 +243,7 @@ main {
 
 /** Footer **/
 footer {
-    height: 8vw;
+    height: max(8vw, 120px);
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -247,9 +255,21 @@ footer {
 }
 
 footer p {
-    font-size: 2vw;
+    font-size: max(2vw, 20px);
     font-weight: 400;
     color: #000000d9;
 }
 
-/** Animations **/
+@media screen and (max-width: 950px) {
+    .navbar .btns {
+        width: 100%;
+    }
+
+    .navbar .btns a {
+        font-size: 4vw;
+    }
+
+    .navbar .logo {
+        display: none;
+    }
+}
